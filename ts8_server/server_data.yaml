@@ -1,0 +1,30 @@
+
+project:
+  name: "ts8"
+  
+server:
+  ip: "5.129.200.195"
+  http_port: "80:80"
+  https_port: "443:443"
+  domain: "my-points.ru"
+  subdomain:
+    api: "api"
+    web: "web"
+    insights: "insights"
+  email: "frolprank@gmail.com"
+  
+database:
+  host: "192.168.0.6"
+  port: "5432"
+  name: "ts8_db"
+  user: "ts8_user"  
+
+reddis:
+  host: "192.168.0.7"
+  port: "6379"
+  user: "default"
+  
+deployment:
+  organization: "devabacus"
+  ssh_user: "serverpod"
+
