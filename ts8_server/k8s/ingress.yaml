@@ -1,0 +1,48 @@
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ts8-server-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx" 
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" 
+spec:
+  tls:
+  - hosts:
+    - api.my-points.ru
+    - web.my-points.ru
+    - insights.my-points.ru
+    secretName: serverpod-tls-ts8
+  rules:
+  - host: "api.my-points.ru"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ts8-server-service
+            port:
+              name: api
+  - host: "web.my-points.ru"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ts8-server-service
+            port:
+              name: web
+  - host: "insights.my-points.ru"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ts8-server-service
+            port:
+              name: insights
+    

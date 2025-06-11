@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:ts8_client/ts8_client.dart';
 
-// var client = Client('https://api5.my-points.ru/')
-var client = Client('http://localhost:8080/')
+var client = Client('https://api.my-points.ru/')
+// var client = Client('http://localhost:8080/')
   ..connectivityMonitor = FlutterConnectivityMonitor();
 
 class ServerCheckUi extends StatefulWidget {
